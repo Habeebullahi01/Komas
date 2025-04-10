@@ -1,0 +1,10 @@
+@page
+@model CatalogueIndexModel
+
+<div>
+    <p>This is the Catalogue</p>
+    @foreach (var product in Model.Products)
+    {
+        <li>@product.ProductName</li>
+    }
+</div>
