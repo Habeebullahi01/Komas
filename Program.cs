@@ -2,7 +2,13 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
-builder.Services.AddHttpClient();
+builder.Services.AddHttpClient("Product", client =>
+{
+    if (builder.Environment.IsDevelopment())
+    {
+        client.BaseAddress = new Uri(builder.Configuration["ProductAPI:BaseUrl"]);
+    }
+});
 
 var app = builder.Build();
 
