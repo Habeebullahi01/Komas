@@ -1,8 +1,12 @@
 @page
 @model CatalogueIndexModel
+@{
+    ViewData["Title"] = "Catalogue";
+}
 
 <div>
     <p>This is the Catalogue</p>
+    <a href="/Catalogue/AddProduct">Add new Product</a>
     @foreach (var product in Model.Products)
     {
         <li>@product.ProductName</li>

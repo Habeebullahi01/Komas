@@ -1,0 +1,31 @@
+@page
+@{
+    ViewData["Title"] = "Add Product";
+}
+@model AddProductPageModel
+
+<div>
+    <form method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="mb-3">
+            <label for="productName" class="form-label">Product Name</label>
+            <input type="text" class="form-control" name="ProductName" id="productName">
+            <span asp-validation-for="Product!.ProductName"></span>
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <input type="text" class="form-control" id="description" name="Description">
+            <span asp-validation-for="Product!.Description"></span>
+        </div>
+        <div class="mb-3">
+            <label for="price" class="form-label">Price</label>
+            <input type="number" class="form-control" id="price" name="Price">
+            <span asp-validation-for="Product!.Price"></span>
+        </div>
+        @* <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div> *@
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
