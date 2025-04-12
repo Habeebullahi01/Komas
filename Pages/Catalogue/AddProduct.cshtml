@@ -9,18 +9,18 @@
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         <div class="mb-3">
             <label for="productName" class="form-label">Product Name</label>
-            <input type="text" class="form-control" name="ProductName" id="productName">
-            <span asp-validation-for="Product!.ProductName"></span>
+            <input type="text" class="form-control" name="ProductName" id="productName" asp-for="Product.ProductName">
+            <span asp-validation-for="Product.ProductName" class="text-deep-brown f6"></span>
         </div>
         <div class="mb-3">
             <label for="description" class="form-label">Description</label>
-            <input type="text" class="form-control" id="description" name="Description">
-            <span asp-validation-for="Product!.Description"></span>
+            <input type="text" class="form-control" id="description" name="Description" asp-for="Product.Description">
+            <span asp-validation-for="Product.Description" class="text-deep-brown f6"></span>
         </div>
         <div class="mb-3">
             <label for="price" class="form-label">Price</label>
-            <input type="number" class="form-control" id="price" name="Price">
-            <span asp-validation-for="Product!.Price"></span>
+            <input type="number" class="form-control" id="price" name="Price" asp-for="Product.Price">
+            <span asp-validation-for="Product.Price" class="f6 text-deep-brown"></span>
         </div>
         @* <div class="mb-3 form-check">
             <input type="checkbox" class="form-check-input" id="exampleCheck1">
@@ -29,3 +29,7 @@
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </div>
+
+@* @section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+} *@

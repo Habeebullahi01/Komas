@@ -7,7 +7,7 @@ namespace Komas.Pages;
 public class AddProductPageModel : PageModel
 {
     [BindProperty]
-    public required Product? Product { get; set; } = new Product() { ProductName = "", Description = "", Price = 0 };
+    public required Product Product { get; set; } = new Product() { ProductName = "", Description = "", Price = 0 };
 
     private IHttpClientFactory _httpClientFactory;
 
@@ -25,15 +25,15 @@ public class AddProductPageModel : PageModel
         // validate Model
         if (Product.ProductName == null || string.IsNullOrEmpty(Product.ProductName.Trim()))
         {
-            ModelState.AddModelError("ProductName", "Product Name can't be empty");
+            ModelState.AddModelError("Product.ProductName", "Product Name can't be empty");
         }
         if (Product.Description == null || string.IsNullOrEmpty(Product.Description.Trim()))
         {
-            ModelState.AddModelError("Description", "Product description should not be empty");
+            ModelState.AddModelError("Product.Description", "Product description should not be empty");
         }
         if (Product.Price <= 0)
         {
-            ModelState.AddModelError("Price", "Product should cost more than zero");
+            ModelState.AddModelError("Product.Price", "Product should cost more than zero");
         }
 
         if (!ModelState.IsValid)
