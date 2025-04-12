@@ -1,3 +1,11 @@
+:root {
+  --theme-dark-brown: #3a3238;
+  --theme-medium-brown: #6e4555;
+  --theme-pink: #d282a6;
+  --theme-brownish-pink: #e8b4bc;
+  --theme-light-pink: #f5e3e0;
+}
+
 html {
   font-size: 14px;
 }
@@ -46,4 +54,8 @@ body {
 
 .text-deep-brown {
   color: #3a3238;
+}
+
+.text-medium-brown {
+  color: #6e4555;
 }

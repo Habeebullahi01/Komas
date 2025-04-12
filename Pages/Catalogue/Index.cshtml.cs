@@ -15,7 +15,7 @@ public class CatalogueIndexModel : PageModel
     public async Task OnGetAsync()
     {
         var _httpClient = _httpClientFactory.CreateClient("Product");
-        var response = await _httpClient.GetFromJsonAsync<ProductResponse>("Product");
+        var response = await _httpClient.GetFromJsonAsync<ProductResponse>("Product?pageSize=100");
         if (response != null)
             Products = response.Items;
     }
