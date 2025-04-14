@@ -1,0 +1,21 @@
+@page
+@{
+    ViewData["Title"] = "Product";
+}
+@model ViewProductPageModel;
+
+<div>
+    @{
+        if (Model.Product != null)
+        {
+            @* <p>Viewing details for product id @Model.Product.ProductId</p> *@
+            <p><span>Name:</span><span class="fw6"> @Model.Product.ProductName.ToUpper()</span></p>
+            <p><span>Description:</span><span> @Model.Product.Description</span></p>
+            <p><span>Price:</span><span> @Model.Product.Price.ToString("C", new CultureInfo("en-ng"))</span></p>
+        }
+        else
+        {
+            <p>We couldn't retrieve that product.</p>
+        }
+    }
+</div>

@@ -14,6 +14,7 @@
             <div class="ba w-20 pa3">
                 <p class="text-deep-brown fw6 ma0">@product.ProductName</p>
                 <p class="text-medium-brown ma0">@product.Price.ToString("C", new CultureInfo("en-ng"))</p>
+                <a asp-page="/Catalogue/Product" asp-route-id=@product.ProductId>View Product</a>
             </div>
         }
     </div>
