@@ -5,13 +5,20 @@
 @model ViewProductPageModel;
 
 <div>
+    <a asp-page="/Catalogue/Index">
+        <button class="btn btn-dark-brown">Back to Catalogue</button>
+    </a>
     @{
         if (Model.Product != null)
         {
             @* <p>Viewing details for product id @Model.Product.ProductId</p> *@
-            <p><span>Name:</span><span class="fw6"> @Model.Product.ProductName.ToUpper()</span></p>
+            <p><span>Name:</span><span class="fw6"> @Model.Product.ProductName</span></p>
             <p><span>Description:</span><span> @Model.Product.Description</span></p>
             <p><span>Price:</span><span> @Model.Product.Price.ToString("C", new CultureInfo("en-ng"))</span></p>
+
+            <hr />
+
+            <partial name="_EditProductPartial" for="@Model.ProductFormModel" />
         }
         else
         {

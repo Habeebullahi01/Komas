@@ -59,3 +59,15 @@ body {
 .text-medium-brown {
   color: #6e4555;
 }
+
+.btn-dark-brown {
+  background-color: var(--theme-medium-brown);
+  color: var(--theme-light-pink);
+}
+.btn-dark-brown:hover {
+  /* background-color: var(--theme-medium-brown); */
+  color: var(--theme-dark-brown);
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--theme-dark-brown);
+}
